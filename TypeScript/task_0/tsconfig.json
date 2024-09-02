@@ -7,5 +7,9 @@
     "target": "es5",
     "allowJs": true,
     "moduleResolution": "node"
-  }
+  },
+ // Do not check node_modules folder
+  "exclude": [
+    "node_modules"
+  ]
 }
