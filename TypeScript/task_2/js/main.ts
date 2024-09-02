@@ -1,17 +1,17 @@
-interface BaseInterface {
+export interface BaseInterface {
     workFromHome(): string;
     getCoffeeBreak(): string;
 }
 
-interface DirectorInterface extends BaseInterface{
+export interface DirectorInterface extends BaseInterface{
     workDirectorTasks(): string;
 }
 
-interface TeacherInterface extends BaseInterface{
+export interface TeacherInterface extends BaseInterface{
     workTeacherTasks(): string;
 }
 
-class Director implements DirectorInterface{
+export class Director implements DirectorInterface{
     workFromHome(): string {
         return 'Working from home';
     }
@@ -25,7 +25,7 @@ class Director implements DirectorInterface{
     }
 }
 
-class Teacher implements TeacherInterface {
+export class Teacher implements TeacherInterface {
     workFromHome(): string {
         return 'Cannot work from home';
     }
@@ -39,10 +39,22 @@ class Teacher implements TeacherInterface {
     }
 }
 
-const createEmployee = (salary: number | string): DirectorInterface | TeacherInterface => {
+export const createEmployee = (salary: number | string): DirectorInterface | TeacherInterface => {
     if (typeof salary === 'number' && salary < 500) {
         return new Teacher();
     }
 
     return new Director();
+}
+
+export const isDirector = (employee: DirectorInterface | TeacherInterface): employee is Director => {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+export const executeWork = (employee: DirectorInterface | TeacherInterface): string => {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    }
+
+    return employee.workTeacherTasks();
 }
