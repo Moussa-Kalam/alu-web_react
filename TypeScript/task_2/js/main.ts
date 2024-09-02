@@ -58,3 +58,13 @@ export const executeWork = (employee: DirectorInterface | TeacherInterface): str
 
     return employee.workTeacherTasks();
 }
+
+export type Subjects = "Math" | "History";
+
+export const teachClass = (todayClass: Subjects): string => {
+    if (todayClass === "Math") {
+        return "Teaching Math";
+    }
+
+    return "Teaching History";
+}
