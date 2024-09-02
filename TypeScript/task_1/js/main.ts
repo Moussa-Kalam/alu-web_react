@@ -10,3 +10,8 @@ export interface Teacher {
 export interface Directors extends Teacher {
     numberOfReports: number;
 }
+
+
+export const printTeacher = (firstName: string, lastName: string) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
