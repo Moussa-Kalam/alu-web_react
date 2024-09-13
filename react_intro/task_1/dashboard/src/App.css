@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+.App-header {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  border-bottom: 4px solid red;
+  margin-bottom: 40px;
+}
+.App-header h1 {
+  color: red;
+  font-size: 60px;
+}
+.App-header img {
+  height: 300px;
+}
+.App-body {
+  flex: 1;
+  padding-left: 60px;
+}
+.App-body p, .App-footer p {
+  font-size: 32px;
+}
+
+.App-footer {
+  border-top: 4px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.App-footer p {
+  font-style: italic;
+}
