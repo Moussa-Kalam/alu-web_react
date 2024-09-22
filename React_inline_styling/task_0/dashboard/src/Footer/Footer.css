@@ -1,0 +1,10 @@
+.App-footer {
+    border-top: 4px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .App-footer p {
+    font-style: italic;
+  }
